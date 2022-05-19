@@ -50,7 +50,15 @@ class _MovieListState extends State<MovieList> {
                     color: Colors.white,
                     elevation: 2.0,
                     child: ListTile(
-                        title: Text(movies[position].title),
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          child: Image.network(
+                              'https://image.tmdb.org/t/p/w300' +
+                                  movies[position].posterPath),
+                        ),
+                        title: Text(movies[position].title,
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold)),
                         subtitle: Text(
                           'Rating = ' + movies[position].voteAverage.toString(),
                         ),
